@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const helmet = require('helmet');
 var cors = require('cors')
 
 // instatiate the app
@@ -8,7 +7,6 @@ const app = express();
 
 // middleware 
 app.use(cors())
-app.use(helmet())
 app.use(express.urlencoded({ extended: false }));
 
 // base page

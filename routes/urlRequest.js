@@ -20,7 +20,6 @@ router.post('/', function(req, res) {
                 let altArray = []
                 let imageChecker = response.data.match(/<img.*?src="(.*?)"/g)
                 imageChecker.forEach( image => {
-    
                     let altMatch = image.match(/alt="(.*?)"/g)
                     finalArray.forEach( element => {
                         if (altMatch) {
@@ -41,12 +40,11 @@ router.post('/', function(req, res) {
                     'images': imageArrayFinal,
                     'titles': altArray
                 }
-                console.log(finalObj)
                 res.status(200).send(finalObj)
             }
         })
     } catch (error) {
-        res.status(503).send(error)
+        res.status(503).send('error message')
     }
 })
 
